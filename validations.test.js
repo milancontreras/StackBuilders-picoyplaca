@@ -1,4 +1,4 @@
-const{ validateLicencePlate, validateDate} = require('./validations');
+const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
 
 //--Licence Plate
 //
@@ -86,6 +86,39 @@ describe('validate Date', () => {
     test("full array", () => {  
         expect(validateDate(['2022-01-01'])).toBe(false);   
     });
+});
 
+//--Time
+//
+//Test group 3: Check if the Time is a valid Time
+describe('validate Time', () => {
+    test('valid Time', () => {
+        expect(validateTime('12:00')).toBe(true);
+    });
+    
+    test('invalid Time', () => {
+        expect(validateTime('12:60')).toBe(false);
+    });
+    
+    test('undefine value', () => {
+        expect(validateTime()).toBe(false);
+    });
+    
+    test('empty value', () => {
+        expect(validateTime('')).toBe(false);
+    });
+    
+    test('null value', () => {
+        expect(validateTime(null)).toBe(false);
+    });
+    
+    test("empty array", () => {
+        expect(validateTime([])).toBe(false);
+    });
+    
+    test("full array", () => {  
+        expect(validateTime(['12:00'])).toBe(false);   
+    });
 
 });
+
