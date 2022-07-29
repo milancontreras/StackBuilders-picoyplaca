@@ -32,11 +32,37 @@ function validateLicencePlate(plate) {
     if(!plate.match(/^[A-Z]{3}-[0-9]{3,4}$/)) {
         return false;
     }
-    
+
     return true;
 }
 
 
+//
+//--Date
+
+function validateDate(date){ 
+
+    //check if the date is null or empty
+    if(date === null || date === '') {
+        return false;
+    }
+
+    //check if the date type if different from string
+    if(typeof date!== 'string')  {    
+        return false;
+    }
+
+    //check if the date is a valid date
+    if(new Date(date) == 'Invalid Date') {
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+
 module.exports = { 
-    validateLicencePlate
+    validateLicencePlate,
+    validateDate
 }
