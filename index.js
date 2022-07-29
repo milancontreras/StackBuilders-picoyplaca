@@ -1,0 +1,2 @@
+const{ validateLicencePlate } = require('./validations');
+
