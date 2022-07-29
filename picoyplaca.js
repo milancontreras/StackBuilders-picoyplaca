@@ -67,5 +67,6 @@ function canBeOnTheRoad(plate, date, time) {
 }
 
 module.exports = { 
-    canBeOnTheRoad
+    canBeOnTheRoad,
+    isPicoyPlacaHour
   }
