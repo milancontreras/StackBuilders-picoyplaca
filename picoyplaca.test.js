@@ -1,10 +1,11 @@
-const {canBeOnTheRoad,isPicoyPlacaHour} = require('./picoyplaca.js');
+//const {canBeOnTheRoad,isPicoyPlacaHour} = require('./picoyplaca.js');
+import {canBeOnTheRoad,isPicoyPlacaHour} from './picoyplaca.js';
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--Manual validation
-plateInput = 'ABC-1111';
-dateInput = '2022-07-25';
-timeInput = '08:00';
-result = false;
+const plateInput = 'ABC-1111';
+const dateInput = '2022-07-25';
+const timeInput = '08:00';
+const result = false;
 
 describe(`Manual validation`, () => {
     test(`inputs:\n 
@@ -22,7 +23,7 @@ describe(`Manual validation`, () => {
 //
 
 //dates that correspond to a days of the week
-dates = {
+const dates = {
     "monday" : "2022-07-25",
     "tuesday" : "2022-07-26",
     "wednesday" : "2022-07-27",
@@ -60,14 +61,14 @@ for (let i = 0; i < 24; i++) {
 }
 
 //Generate plates that can't be on the road each day
-canNotBeOnTheRoadMondayPlates = ["AAA-1111", "AAA-1112"];
-canNotBeOnTheRoadTuesdayPlates = ["AAA-1113", "AAA-1114"];
-canNotBeOnTheRoadWednesdayPlates = ["AAA-1115", "AAA-1116"];
-canNotBeOnTheRoadThursdayPlates = ["AAA-1117", "AAA-1118"];
-canNotBeOnTheRoadFridayPlates = ["AAA-1119", "AAA-1110"];
+const canNotBeOnTheRoadMondayPlates = ["AAA-1111", "AAA-1112"];
+const canNotBeOnTheRoadTuesdayPlates = ["AAA-1113", "AAA-1114"];
+const canNotBeOnTheRoadWednesdayPlates = ["AAA-1115", "AAA-1116"];
+const canNotBeOnTheRoadThursdayPlates = ["AAA-1117", "AAA-1118"];
+const canNotBeOnTheRoadFridayPlates = ["AAA-1119", "AAA-1110"];
 
 //Generate a list of plates that teh last digit come sfrom 0 to 9
-allPlates = canNotBeOnTheRoadMondayPlates.concat(canNotBeOnTheRoadTuesdayPlates, canNotBeOnTheRoadWednesdayPlates, canNotBeOnTheRoadThursdayPlates, canNotBeOnTheRoadFridayPlates);
+const allPlates = canNotBeOnTheRoadMondayPlates.concat(canNotBeOnTheRoadTuesdayPlates, canNotBeOnTheRoadWednesdayPlates, canNotBeOnTheRoadThursdayPlates, canNotBeOnTheRoadFridayPlates);
 
 
 

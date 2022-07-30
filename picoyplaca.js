@@ -1,4 +1,5 @@
-const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
+//const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
+import {validateLicencePlate, validateDate, validateTime} from './validations.js';
 //--Rules
 //
 // 1. The car is allowed to drive at the morning if the time is between 7:00 and 09:30.
@@ -78,7 +79,7 @@ function canBeOnTheRoadWithValidations(plate, date, time){
         flagPlate = true;
     }else {
         //console.log("The plate is invalid");
-        ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plateInput.toUpperCase()}\n`);
+        ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate.toUpperCase()}\n`);
         flagPlate = false;
     }
 
@@ -128,8 +129,12 @@ function canBeOnTheRoadWithValidations(plate, date, time){
 
 
 
-module.exports = { 
-    canBeOnTheRoad,
-    isPicoyPlacaHour,
-    canBeOnTheRoadWithValidations
-  }
+// module.exports = { 
+//     canBeOnTheRoad,
+//     isPicoyPlacaHour,
+//     canBeOnTheRoadWithValidations
+//   }
+export {canBeOnTheRoadWithValidations,
+        isPicoyPlacaHour,
+        canBeOnTheRoad
+    };

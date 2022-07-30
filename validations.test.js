@@ -1,5 +1,5 @@
-const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
-
+//const{ validateLicencePlate, validateDate, validateTime} = require('./validations.js');
+ import { validateLicencePlate, validateDate, validateTime} from './validations.js';
 //--Licence Plate
 //
 //Test group 1: Check if the Licence Plate is a valid Licence Plate
@@ -30,7 +30,7 @@ describe('validate Licence Plate', () => {
     });
     
     test('Licence Plate with > 4 letters', () => {
-        letters = ["AAAA", "AAAAA","AAAAAA","AAAAAAA","AAAAAAAA"]
+        const letters = ["AAAA", "AAAAA","AAAAAA","AAAAAAA","AAAAAAAA"]
         letters.forEach(letter => {
             expect(validateLicencePlate(letter)).toBe(false);
         }
@@ -38,7 +38,7 @@ describe('validate Licence Plate', () => {
     });
     
     test('Licence Plate > 4 numbers', () => {
-        numbers = ["11111", "111111","1111111","11111111","111111111"]
+        const numbers = ["11111", "111111","1111111","11111111","111111111"]
         numbers.forEach(combinationOfNumbers => {
             expect(validateLicencePlate('AAA-'+combinationOfNumbers)).toBe(false);
         }

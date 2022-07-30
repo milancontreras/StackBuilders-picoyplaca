@@ -103,10 +103,10 @@ function validateTime(time){
 
 
 
-module.exports = { 
-    validateLicencePlate,
-    validateDate,
-    validateTime
-}
+// module.exports = { 
+//     validateLicencePlate,
+//     validateDate,
+//     validateTime
+// }
 
-//export { validateLicencePlate, validateDate, validateTime }
+export { validateLicencePlate, validateDate, validateTime }
