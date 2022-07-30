@@ -2,10 +2,10 @@
 import {canBeOnTheRoad,isPicoyPlacaHour} from '../src/picoyplaca.js';
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--Manual validation
-const plateInput = 'ABC-1111';
-const dateInput = '2022-07-25';
+const plateInput = 'ABC-1112';
+const dateInput = '2022-07-26';
 const timeInput = '08:00';
-const result = false;
+const result = true;
 
 describe(`Manual validation`, () => {
     test(`inputs:\n 

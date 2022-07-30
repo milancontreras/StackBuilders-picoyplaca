@@ -57,9 +57,10 @@ function canBeOnTheRoad(plate, date, time) {
     //Check if the hour is Pico y Placa time
     if(isPicoyPlacaHour(time)) {
 
-        //Check if the last digit of the plate is in the list of plates that can't be on the road that specific day
+        //Check if the last digit of the plate is in the list of plates that can't be on the road that specific day       
         if(platesThatCantBeOnTheRoad(date).includes(lastDigitPlate(plate))) {
             return false;
+            
         }else{
             return true;
         }         

@@ -3,7 +3,7 @@
 ## **Pico y Placa Predictor**
 ### **Author:** Milan Contreras
 
-## Table of Contents
+## **Table of Contents**
 1. [About The Project](#about-the-project)
 2. [Technologies](#technologies)
 3. [Getting Started](#getting-started)
@@ -12,6 +12,7 @@
 5. [Contact](#contact)
 
 ## **About The Project**
+***
 This is a coding challenge.
 ### **Instructions**
 Using the language that you feel most proficient in, we’d like you to write a "Pico y Placa" predictor. The inputs should be a license plate number (the full number, not the last digit. e.g. PBX-1234), a date (as a String), and a time. Feel free to choose the date / time format you're comfortable with. The program should return whether or not that car can be on the road. You may use any input and output method you prefer. Although it is not required, we’d love to see the following in your code for extra points:
@@ -83,7 +84,7 @@ $ npm install --save-dev babel-jest
 
 5. I recommend you to install the Live Server from the extension of Visual Code. But, in case you are using another IDE install live-server
 ```
-$ npm install live-server
+$ npm install -g live-server
 ```
 
 
@@ -141,7 +142,7 @@ Definitions of the rules. And the main logic for knowing if a car can be on the 
 Tests for the main functions in picoyplaca.js
 
 ### **index.js**
-Logic for taking the valius from a Form and Sending a result.
+Logic for taking the values from a Form and Sending a result.
 
 
 ## **Contact**
