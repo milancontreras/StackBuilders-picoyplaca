@@ -121,6 +121,8 @@ where:
 ```
 $ live-server
 ```
+**Note:** \
+If you have problems runnning this command, try it with administrator permissions 
 
 ## **Files **Explanation**
 ***
