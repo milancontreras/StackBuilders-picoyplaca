@@ -6,7 +6,7 @@ var form = document.getElementById('form');
         //take values from de Form
         form.addEventListener('submit', function(event){
             event.preventDefault();
-            document.getElementById('result').value = ``;
+            document.getElementById('textAreaResult').value = ``;
 
             var plate = document.getElementById('plate').value;
             var date = document.getElementById('date').value;
@@ -23,14 +23,14 @@ var form = document.getElementById('form');
             console.log(`Inputs:\n  plate: ${plate.toUpperCase()}\n  date: ${date}\n  time: ${time}`);
             if(result !== null){
                 if(result){
-                    document.getElementById('result').value = `The car can be on the road`;
+                    document.getElementById('textAreaResult').value = `The car can be on the road`;
                     console.log(`The car can be on the road`);
                 }else{
-                    document.getElementById('result').value = `The car can not be on the road`;
+                    document.getElementById('textAreaResult').value = `The car can not be on the road`;
                     console.log(`The car can not be on the road`);
                 }   
             }else{
-                document.getElementById('result').value = `ERROR: ${errorMessage}`;
+                document.getElementById('textAreaResult').value = `ERROR:\n${errorMessage}`;
                 console.error(`ERROR: ${errorMessage}`);
                 
             }

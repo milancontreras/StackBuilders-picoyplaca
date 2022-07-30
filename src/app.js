@@ -25,9 +25,9 @@ function canBeOnTheRoadWithValidations(plate, date, time){
     }else {
         //console.log("The plate is invalid");
         if(plate === null || typeof plate  !== 'string') {
-            ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate}\n`);
+            ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate} \n`);
         }else{
-            ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate.toUpperCase()}\n`);
+            ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate.toUpperCase()} \n`);
         }
 
         
@@ -42,7 +42,7 @@ function canBeOnTheRoadWithValidations(plate, date, time){
         flagDate= true;
     }else { 
         //console.log("The date is invalid");
-        ErrorMessage = ErrorMessage.concat(`The date is invalid: ${date}\n`);
+        ErrorMessage = ErrorMessage.concat(`The date is invalid: ${date} \n`);
         flagDate= false;
     }
 
@@ -55,7 +55,7 @@ function canBeOnTheRoadWithValidations(plate, date, time){
         flagTime = true;
     }else{
         //console.log("The hour is invalid");
-        ErrorMessage = ErrorMessage.concat(`The hour is invalid: ${time}\n`);
+        ErrorMessage = ErrorMessage.concat(`The hour is invalid: ${time} \n`);
         flagTime = false;
     }
 
