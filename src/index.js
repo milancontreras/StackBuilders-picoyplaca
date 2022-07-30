@@ -30,7 +30,7 @@
 // }
 
 
-import {canBeOnTheRoadWithValidations} from './picoyplaca.js';
+import {canBeOnTheRoadWithValidations} from '../picoyplaca.js';
 
 
 var form = document.getElementById('form');

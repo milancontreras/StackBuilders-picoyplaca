@@ -1,5 +1,5 @@
 //const {canBeOnTheRoad,isPicoyPlacaHour} = require('./picoyplaca.js');
-import {canBeOnTheRoad,isPicoyPlacaHour} from './picoyplaca.js';
+import {canBeOnTheRoad,isPicoyPlacaHour} from '../src/picoyplaca.js';
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--Manual validation
 const plateInput = 'ABC-1111';

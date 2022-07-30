@@ -1,5 +1,5 @@
 //const{ validateLicencePlate, validateDate, validateTime} = require('./validations.js');
- import { validateLicencePlate, validateDate, validateTime} from './validations.js';
+ import { validateLicencePlate, validateDate, validateTime} from '../src/validations.js';
 //--Licence Plate
 //
 //Test group 1: Check if the Licence Plate is a valid Licence Plate
