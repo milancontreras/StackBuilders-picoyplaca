@@ -108,3 +108,5 @@ module.exports = {
     validateDate,
     validateTime
 }
+
+//export { validateLicencePlate, validateDate, validateTime }

@@ -1,3 +1,4 @@
+const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
 //--Rules
 //
 // 1. The car is allowed to drive at the morning if the time is between 7:00 and 09:30.
@@ -66,7 +67,69 @@ function canBeOnTheRoad(plate, date, time) {
     }
 }
 
+//Given a license, plate and time return true if the car can be on the road and false if not. And an error message if the input is not valid
+function canBeOnTheRoadWithValidations(plate, date, time){
+    var ErrorMessage= "";
+    // Step 1.
+    // Validate plate
+    var flagPlate = false;
+    if(validateLicencePlate(plate.toUpperCase())) {
+        //console.log("The plate is valid");
+        flagPlate = true;
+    }else {
+        //console.log("The plate is invalid");
+        ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plateInput.toUpperCase()}\n`);
+        flagPlate = false;
+    }
+
+    // Step 2.
+    //Validate date
+    var flagDate= false;
+    if(validateDate(date)) {
+        //console.log("The date is valid");
+        flagDate= true;
+    }else { 
+        //console.log("The date is invalid");
+        ErrorMessage = ErrorMessage.concat(`The date is invalid: ${date}\n`);
+        flagDate= false;
+    }
+
+
+    // Step 3.
+    //Validate hour
+    var flagTime = false;
+    if(validateTime(time)) {
+        //console.log("The hour is valid");
+        flagTime = true;
+    }else{
+        //console.log("The hour is invalid");
+        ErrorMessage = ErrorMessage.concat(`The hour is invalid: ${time}\n`);
+        flagTime = false;
+    }
+
+    
+    // Step 4.
+    //Validate if the car can be or not on the road
+    if(!(flagPlate && flagDate && flagTime)) {
+
+        return [null, ErrorMessage];
+        //console.log(`ERROR: ${ErrorMessage}`);
+    }else{        
+        if(canBeOnTheRoad(plate.toUpperCase(), date, time)){
+            //console.log("Can be on the road");
+            return [true, ErrorMessage];
+        }else{
+            return [false, ErrorMessage];
+        }
+    }
+
+    
+}
+
+
+
 module.exports = { 
     canBeOnTheRoad,
-    isPicoyPlacaHour
+    isPicoyPlacaHour,
+    canBeOnTheRoadWithValidations
   }
