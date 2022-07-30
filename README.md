@@ -95,6 +95,10 @@ $ npm install -g live-server
 ```
 $ npm run test
 ```
+Result:
+<img src="./images/npm_run_test.png" alt="Alt text" title="npm run test command">
+
+
 2. Running an specific test
 ```
 $ npm run test -- <file_test_name.js>
@@ -103,6 +107,9 @@ for example
 ```
 $ npm run test -- validations.test.js
 ```
+Result:
+<img src="./images/npm_run_test_app_test.png" alt="Alt text" title="npm run test -- picoyplaca.test.js  command">
+
 5. To try your own inputs directly in code i recommend you to change the variables **plateInput**, **dateInput**, **timeInput** and **Result** in ```picoyplaca.test.js```. As the example:
 ```
 const plateInput = 'ABC-1111';
@@ -121,10 +128,26 @@ where:
 ```
 $ live-server
 ```
+Result:
+<img src="./images/live_server_command.png" alt="Alt text" title="live server command">
+
+On Browser:
+<img src="./images/live_server_browser.png" alt="Alt text" title="live server on browser">
+
+Example of inputs that result in => can be on the road:
+<img src="./images/live_server_can_be_on_the_road.png" alt="Alt text" title="can be on the road">
+
+Example of inputs that result in => can't be on the road:
+<img src="./images/live_server_cant_be_on_the_road.png" alt="Alt text" title="can't be on the road">
+
+Example of invalid inputs:
+<img src="./images/live_server_invalid_plate.png" alt="Alt text" title="invalid input">
+
+
 **Note:** \
 If you have problems runnning this command, try it with administrator permissions 
 
-## **Files **Explanation**
+## **Files Explanation**
 ***
 Here you will have a global look of waht will you find in each file.
 
@@ -138,10 +161,16 @@ Functions that will help me validating the:
 Tests for the main functions in validations.js
 
 ### **picoyplaca.js**
-Definitions of the rules. And the main logic for knowing if a car can be on the road or not.
+Definitions of the rules. And functions to determine if a car can be on the road or not
 
 ### **picoyplaca.test.js**
 Tests for the main functions in picoyplaca.js
+
+### **app.js**
+Take the functions from ```validations.js``` and ```picoyplaca.js``` to create the main logic if a car can or not be on the road validating the inputs.
+
+### **app.test.js**
+Tests for the main functions in app.js.
 
 ### **index.js**
 Logic for taking the values from a Form and Sending a result.
