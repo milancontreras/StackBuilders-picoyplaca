@@ -1,5 +1,20 @@
-//const{ validateLicencePlate, validateDate, validateTime} = require('./validations.js');
  import { validateLicencePlate, validateDate, validateTime} from '../src/validations.js';
+ /*
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+** IMPORTANT INFORMATION ** 
+Here you will find validations of the main functions from  validations.js:
+validateLicencePlate():
+  - Return true if the plate is valid
+  - Return false if the plate is invalid
+validateDate():
+  - Return true if the date is valid
+  - Return false if the date is invalid
+validateTime():
+  - Return true if the time is valid
+  - Return false if the time is invalid
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
 //--Licence Plate
 //
 //Test group 1: Check if the Licence Plate is a valid Licence Plate

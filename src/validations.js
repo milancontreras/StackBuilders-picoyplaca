@@ -1,7 +1,22 @@
+/*
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+** IMPORTANT INFORMATION** 
+Here you will find the functions for validating the inputs from the user:
+validateLicencePlate():
+  - Return true if the plate is valid
+  - Return false if the plate is invalid
+validateDate():
+  - Return true if the date is valid
+  - Return false if the date is invalid
+validateTime():
+  - Return true if the time is valid
+  - Return false if the time is invalid
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
-//
+
 //--Licence Plate
-
+//
 //Return true if is a valid Licence Plate and false if not
 function validateLicencePlate(plate) {
     //Example Plate Format: ABC-1231 || ABC-123
@@ -28,18 +43,18 @@ function validateLicencePlate(plate) {
         }
     }
 
+
     //Check the plate format
-    if(!plate.match(/^[A-Z]{3}-[0-9]{3,4}$/)) {
+    if(!plate.toUpperCase().match(/^[A-Z]{3}-[0-9]{3,4}$/)) {
         return false;
     }
 
     return true;
 }
 
-
-//
 //--Date
-
+//
+//Return true if is a valid Date and false if not   
 function validateDate(date){ 
 
     //check if the date is null or empty
@@ -64,8 +79,10 @@ function validateDate(date){
     }
 }
 
-//
+
 //--Time
+//
+//Return true if is a valid Time and false if not
 function validateTime(time){
     //time format: HH:MM
 
@@ -104,13 +121,5 @@ function validateTime(time){
 
     return true;
 }
-
-
-
-// module.exports = { 
-//     validateLicencePlate,
-//     validateDate,
-//     validateTime
-// }
 
 export { validateLicencePlate, validateDate, validateTime }

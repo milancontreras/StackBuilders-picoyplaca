@@ -1,14 +1,36 @@
-//const{ validateLicencePlate, validateDate, validateTime} = require('./validations');
-import {validateLicencePlate, validateDate, validateTime} from './validations.js';
-//--Rules
-//
-// 1. The car is allowed to drive at the morning if the time is between 7:00 and 09:30.
-// 2. The car is allowed to drive at the afternoon if the time is between 16:00 and 19:30.
+/*
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+** IMPORTANT INFORMATION** 
+Here you will find the rules in code of pico y placa, and the finction:
+canBeOnTheRoad():
+   - Return true if the car can be on the road
+   - Return false if the car can not be on the road
+
+--Rules
+Pico y Placa hours:
+ - at mornings from 7:00 - 9:30.
+ - at afternoons from 16:00 - 19:30.
+
+Can not be on the road at Pico y Placa hours:
+ - Mondays: License Plates ending in 1 or 2.
+ - Tuesday: License Plates ending in 3 or 4.
+ - Wednesday: License Plates ending in 5 or 6.
+ - Thursday: License Plates ending in 7 or 8.
+ - Friday: License Plates ending in 9 or 0.
+
+ Can be on the road:
+ - Any car at any hour on weekends.
+ - Any car out of the Pico y Placa hours.
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+//Pico y Placa hours
 const picoYplacaHoursRules = {
     morning: ['07:00', '09:30'],        //1. morning hours
     afternoon: ['16:00', '19:30'],      //2. afternoon hours  
 }
 
+//Can not be on the road at Pico y Placa hours
 const picoyplacaDayRules = {
     0: [1,2],   //0. Monday
     1: [3,4],   //1. Tuesday
@@ -47,7 +69,6 @@ function lastDigitPlate(plate){
 }
 
 
-
 //--Logic function
 //
 
@@ -56,11 +77,9 @@ function canBeOnTheRoad(plate, date, time) {
 
     //Check if the hour is Pico y Placa time
     if(isPicoyPlacaHour(time)) {
-
         //Check if the last digit of the plate is in the list of plates that can't be on the road that specific day       
         if(platesThatCantBeOnTheRoad(date).includes(lastDigitPlate(plate))) {
-            return false;
-            
+            return false;           
         }else{
             return true;
         }         
@@ -69,73 +88,7 @@ function canBeOnTheRoad(plate, date, time) {
     }
 }
 
-//Given a license, plate and time return true if the car can be on the road and false if not. And an error message if the input is not valid
-function canBeOnTheRoadWithValidations(plate, date, time){
-    var ErrorMessage= "";
-    // Step 1.
-    // Validate plate
-    var flagPlate = false;
-    if(validateLicencePlate(plate.toUpperCase())) {
-        //console.log("The plate is valid");
-        flagPlate = true;
-    }else {
-        //console.log("The plate is invalid");
-        ErrorMessage = ErrorMessage.concat(`The plate is invalid: ${plate.toUpperCase()}\n`);
-        flagPlate = false;
-    }
-
-    // Step 2.
-    //Validate date
-    var flagDate= false;
-    if(validateDate(date)) {
-        //console.log("The date is valid");
-        flagDate= true;
-    }else { 
-        //console.log("The date is invalid");
-        ErrorMessage = ErrorMessage.concat(`The date is invalid: ${date}\n`);
-        flagDate= false;
-    }
-
-
-    // Step 3.
-    //Validate hour
-    var flagTime = false;
-    if(validateTime(time)) {
-        //console.log("The hour is valid");
-        flagTime = true;
-    }else{
-        //console.log("The hour is invalid");
-        ErrorMessage = ErrorMessage.concat(`The hour is invalid: ${time}\n`);
-        flagTime = false;
-    }
-
-    
-    // Step 4.
-    //Validate if the car can be or not on the road
-    if(!(flagPlate && flagDate && flagTime)) {
-
-        return [null, ErrorMessage];
-        //console.log(`ERROR: ${ErrorMessage}`);
-    }else{        
-        if(canBeOnTheRoad(plate.toUpperCase(), date, time)){
-            //console.log("Can be on the road");
-            return [true, ErrorMessage];
-        }else{
-            return [false, ErrorMessage];
-        }
-    }
-
-    
-}
-
-
-
-// module.exports = { 
-//     canBeOnTheRoad,
-//     isPicoyPlacaHour,
-//     canBeOnTheRoadWithValidations
-//   }
-export {canBeOnTheRoadWithValidations,
+export {
         isPicoyPlacaHour,
         canBeOnTheRoad
     };

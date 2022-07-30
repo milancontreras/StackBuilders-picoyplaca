@@ -1,4 +1,4 @@
-import {canBeOnTheRoadWithValidations} from '../src/picoyplaca.js';
+import {canBeOnTheRoadWithValidations} from '../src/app.js';
 
 
 var form = document.getElementById('form');

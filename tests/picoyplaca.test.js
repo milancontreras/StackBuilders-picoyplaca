@@ -1,6 +1,15 @@
-//const {canBeOnTheRoad,isPicoyPlacaHour} = require('./picoyplaca.js');
 import {canBeOnTheRoad,isPicoyPlacaHour} from '../src/picoyplaca.js';
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ** IMPORTANT INFORMATION ** 
+//Here you will find validations of the main function from  picoyplaca.js:
+//canBeOnTheRoad():
+//   - Return true if the car can be on the road
+//   - Return false if the car can not be on the road
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//--Inputs with no format or sintaxis erros (canBeOnTheRoad() does not control the inputs erros)
+//
+
 //--Manual validation
 const plateInput = 'ABC-1112';
 const dateInput = '2022-07-26';
@@ -17,8 +26,8 @@ describe(`Manual validation`, () => {
     });
 
 });
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //--Generation of data for Cases tests
 //
 
@@ -69,10 +78,10 @@ const canNotBeOnTheRoadFridayPlates = ["AAA-1119", "AAA-1110"];
 
 //Generate a list of plates that teh last digit come sfrom 0 to 9
 const allPlates = canNotBeOnTheRoadMondayPlates.concat(canNotBeOnTheRoadTuesdayPlates, canNotBeOnTheRoadWednesdayPlates, canNotBeOnTheRoadThursdayPlates, canNotBeOnTheRoadFridayPlates);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-//--Cases tests
+//--Cases tests for canBeOnTheRoad() function
 //
 
 describe('validate if any plate can be on the road at not pico y placa time', () => {
