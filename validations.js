@@ -52,6 +52,10 @@ function validateDate(date){
         return false;
     }
 
+    if(!date.match(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/)) {
+        return false;
+    }
+
     //check if the date is a valid date
     if(new Date(date) == 'Invalid Date') {
         return false;
